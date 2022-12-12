@@ -12,9 +12,9 @@ import { SharedModule } from './shared/shared.module';
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     PaisModule,
-    SharedModule,
-    AppRoutingModule
+    SharedModule
 
   ],
   providers: [],
