@@ -1,9 +1,9 @@
 import { NgModule } from "@angular/core"
 import { RouterModule, Routes } from "@angular/router"
 import { pathToFileURL } from "url";
-import { PorCapitalComponent } from "./app/pais/pages/por-capital/por-capital.component";
-import { PorPaisComponent } from "./app/pais/pages/por-pais/por-pais.component";
-import { PorRegionComponent } from "./app/pais/pages/por-region/por-region.component";
+import { PorCapitalComponent } from "./pais/pages/por-capital/por-capital.component";
+import { PorPaisComponent } from "./pais/pages/por-pais/por-pais.component";
+import { PorRegionComponent } from "./pais/pages/por-region/por-region.component";
 
 const routes: Routes = [
     {
@@ -20,7 +20,7 @@ const routes: Routes = [
         component: PorCapitalComponent
     },
     {
-        path: 'pais/id',
+        path: 'pais/:id',
         component: PorPaisComponent
     },
     {
