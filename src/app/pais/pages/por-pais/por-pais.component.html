@@ -27,20 +27,25 @@
         <tr>
           <th>#</th>
           <th>Bandera</th>
-          <th>Nombre</th>
+          <th>Nombre
+
+          </th>
           <th>Poblacion</th>
           <th></th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-            <td>1</td>
-            <td>bandera</td>
-            <td>nombre</td>
-            <td>123132161</td>
+        <tr *ngFor="let pais of paises; let i = index">
+            <td>{{1 + i}}</td>
             <td>
-                <a href="/src/app/pais/pages/por-pais/por-pais.component.html">Ver</a>
+              <img src="{{pais.flag}}" class="small-flag">
             </td>
+            <td>{{pais.name}}</td>
+            <td>{{pais.population | number}}</td>
+            <td>
+                <a [routerLink]="['/pais', pais.cca2]" routerLinkActive="router-link-active" >Ver...</a>
+            </td>
+
         </tr>
       </tbody>
     </table>
