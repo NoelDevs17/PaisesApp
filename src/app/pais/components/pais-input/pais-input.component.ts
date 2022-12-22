@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { PaisService } from '../../services/pais.service';
+import { Country } from '../../interfaces/pais.interface';
+import { Observable, observable } from 'rxjs';
 
 @Component({
   selector: 'app-pais-input',
@@ -8,12 +11,16 @@ import { Component, OnInit } from '@angular/core';
 export class PaisInputComponent implements OnInit {
 
   termino: string = '';
-  constructor() { }
+  paises: Country[] = [];
+  constructor(private paisService: PaisService) { }
 
   ngOnInit(): void {
   }
 
   buscar(){
-    console.log('Hola mundo')
+
+
+
   }
+
 }
