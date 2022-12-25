@@ -1,22 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Country } from '../../interfaces/pais.interface';
 import { PaisService } from '../../services/pais.service';
 
 @Component({
   selector: 'app-por-pais',
-  templateUrl: './por-pais.component.html',
-  styleUrls: ['./por-pais.component.css']
+  templateUrl: './por-pais.component.html'
 })
 export class PorPaisComponent{
+
+@Input()capital:Country[]=[]
 
   termino: string = '';
   Error: boolean= false;
   paises : Country[] = [];
   constructor(private paisService: PaisService) { }
 
-  buscar(){
+  buscar(termino: string){
     this.Error = false
-    return this.paisService.buscarPais(this.termino).subscribe(
+    this.termino = termino;
+
+
+     this.paisService.buscarPais(this.termino).subscribe(
       (paises) => {
         return this.paises = paises
       }, (err) => {
@@ -24,6 +28,8 @@ export class PorPaisComponent{
      this.paises = []
       });
   }
-
-
+  sugerencias(termino: string ){
+    this.Error = false;
+    //TODO-Crear sugerencias
+  }
 }
