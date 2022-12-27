@@ -16,7 +16,7 @@
     No se encontro nade con el termino {{termino}}
 </div>
 
-<div *ngIf="!Error" class="row">
+<div *ngIf="paises.length > 0" class="row">
   <div class="col">
     <app-pais-tabla [paises]="paises"></app-pais-tabla>
   </div>
