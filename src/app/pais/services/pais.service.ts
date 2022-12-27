@@ -10,7 +10,7 @@ export class PaisService {
 
 
   private apiUrl: string = 'https://restcountries.com/v2';
-  private apiUrl2: string = 'https://restcountries.com/v3.1';
+
 
   constructor( private http: HttpClient) { }
 
@@ -26,7 +26,7 @@ buscarCapital(termino: string):Observable<Country[]>{
 }
 
 verPais(id: string): Observable<Country>{
-  const url = `${this.apiUrl2}/alpha/${id}`;
+  const url = `${this.apiUrl}/alpha/${id}`;
   return this.http.get<Country>(url)
 }
 

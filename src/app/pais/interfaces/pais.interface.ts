@@ -23,8 +23,14 @@ export interface Country {
   altSpellings: string[];
   region:       string;
   subregion:    string;
+  numericCode: string;
+  alpha3Code: string;
   languages:    Languages;
-  translations: { [key: string]: Translation };
+  translations: { [key: string]: Translation
+
+
+
+  };
   latlng:       number[];
   landlocked:   boolean;
   area:         number;
